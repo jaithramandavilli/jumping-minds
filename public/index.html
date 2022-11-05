@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Jumping Minds</title>
+		<script type="text/javascript">
+			$(document).ready(function(){
+	
+				$( "#form1" ).submit(function(event) {
+					event.preventDefault();
+	
+					$.ajax({
+						type: 'POST',
+						url: '/',
+						data: $('#form1').serialize(),
+						dataType: "json",
+						success: function(response){
+							//alert("a");
+							//console.log(response.Success);
+							$('#form1')[0].reset();
+	
+							document.getElementById("check").innerHTML=response.Success;
+								 //ADD THIS CODE
+								 setTimeout(function(){
+									 document.getElementById("check").innerHTML="";
+								 },3000);
+								 if (response.Success=="You are regestered,You can login now.") {
+									 document.getElementById("aa").click();
+								 };
+							 },
+							 error: function() {
+							 }
+						 })
+				});
+			});
+		</script>
+	</head>
+	<body class="index">
+		<div class="join-container">
+			<header class="join-header">
+				<!-- <h1 ><i class="fa-solid fa-paper-plane"></i><i>Jumping Minds</i></h1> -->
+				<h1><img class="logo" src="nice.png" width="35px" height="39px">  Jumping Minds</h1>
+			</header>
+			<main class="join-main">
+				<form id="form1" action="chat.html">
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+						/>
+					</div>
+					<div class="form-control">
+						<label for="password">Password</label>
+						<input 
+								type="password"
+								name="password"
+								id="password"
+								placeholder="Enter Password..."
+								required
+                        />
+					</div>
+					<div class="form-control">
+						<label for="age">Age</label>
+						<input 
+								type="number"
+								name="age"
+								id="age"
+								placeholder="Enter your age..."
+								required
+                        />
+					</div>
+					
+					<div class="form-control">
+						<label for="room">Room</label>
+					
+						<input
+							type="text"
+							name="room"
+							id="room-name"
+							placeholder="Enter room name..."
+							required
+						/>
+					</div>
+					<div class="form-control">
+					<input type="checkbox" id="agree" name="agree" value="agree" required>
+                    <label for="agree">I agree the terms and conditions of the Jumping Minds and maintain ethics.</label>
+					</div>
+					<button type="submit" class="btn">Register</button>
+				</form>
+			</main>
+			<div class="mssg bg-danger">
+				<span id="check"></span>
+			</div>
+			<div id="LangTable"><a href="chat.html" id="aa"></a>
+			</div>
+		</div>
+	</body>
+</html>

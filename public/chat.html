@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Jumping Minds</title>
+</head>
+<body class="chat">
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1><img class="logo" src="nice.png" width="35px" height="39px"> <i>Jumping Minds</i></h1>
+      <label id="u1"></label>
+      <a href="index.html" class="btn" id="leave-btn">Leave Room</a>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h3><i class="fas fa-comments"></i> Room Name:</h3>
+        <h2 id="room-name">JavaScript</h2>
+        <h3><i class="fas fa-users"></i> Users</h3>
+        <ul id="users">
+        </ul>
+      </div>
+      <div class="chat-messages">
+				
+      </div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Enter Message"
+          required
+          autocomplete="off"
+        />
+        <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+    </div>
+  </div>
+  <div >
+    <h1 class="abt_head">About Us</h1>
+    <hr class="line">
+    <br>
+    <br>
+
+    <img class="img1" src="c1.jpg" width="100px" height="100px">
+    <p class="abt_txt">We are building an Anonymous, Safe, and Effortless Go-To Feel <br>Better platform that smartly connects people to the right peers to talk to & feel better.</p><br>
+    <p class="abt_g">"Our mission is to make spread over a million smile and make the world happier and healthier."</p>
+    <br>
+    <div class="links">
+      <a href="https://www.facebook.com/" class="fb" target="_blank" ><img src="fbicon.png" width="50px" height="50px"></a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/accounts/login/" class="insta" target="_blank"><img src="insta.png" width="50px" height="50px"></a>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.whatsapp.com/" class="wh" target="_blank"><img src="wh.png" width="50px" height="50px"></a>
+       
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
